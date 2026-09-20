@@ -1,0 +1,24 @@
+.format-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: var(--line);
+}
+.format-channel {
+  min-height: 150px; display: flex; flex-direction: column; align-items: flex-start;
+  justify-content: space-between; gap: 12px; padding: 18px; border: 0;
+  border-right: var(--line); background: var(--paper); text-align: left; text-transform: uppercase;
+}
+.format-channel:last-child { border-right: 0; }
+.format-channel:hover, .format-channel:focus-visible { background: var(--acid); }
+.format-channel b { font: 2.4rem/1 var(--display); color: var(--signal); }
+.format-channel span { font-weight: 700; }
+.format-channel small { font-size: 11px; }
+.ref-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.delete-ref { border: 1px solid var(--ink); background: transparent; padding: 5px 8px; text-transform: uppercase; font-size: 11px; }
+.delete-ref:hover, .delete-ref:focus-visible { background: var(--ink); color: white; }
+.ref-preview small { display: block; margin-top: 10px; max-width: 90%; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 800px) {
+  .format-strip { grid-template-columns: repeat(2, 1fr); }
+  .format-channel { border-bottom: var(--line); }
+  .format-channel:nth-child(2) { border-right: 0; }
+}
