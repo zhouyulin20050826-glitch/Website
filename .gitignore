@@ -1,3 +1,5 @@
 .docx-extract/
 .docx-preview/
+.changed-style-extract/
+site-*.tar.gz
 .sites-runtime/

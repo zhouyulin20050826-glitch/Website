@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Permanent+Marker&display=swap');
+
+:root {
+  --ink: #10110d;
+  --paper: #fff7d6;
+  --signal: #ff4a00;
+  --acid: #cfff00;
+  --blue: #ff4a00;
+  --violet: #cfff00;
+  --line: 3px solid var(--ink);
+  --mono: 'Patrick Hand', 'Comic Sans MS', cursive;
+  --display: 'Permanent Marker', 'Arial Black', sans-serif;
+}
+
+html { background: var(--ink); }
+body {
+  font-family: var(--mono);
+  font-size: 18px;
+  background:
+    repeating-linear-gradient(7deg, transparent 0 13px, rgba(16,17,13,.035) 13px 15px),
+    radial-gradient(circle at 90% 12%, rgba(255,74,0,.18), transparent 28%),
+    var(--paper);
+}
+button, input, textarea, select { font-family: var(--mono); }
+h1, h2, h3, .brand, .eyebrow, .tag, strong { letter-spacing: .01em !important; }
+
+.site-head {
+  display: block;
+  background: var(--acid);
+  border-bottom: 4px solid var(--ink);
+  box-shadow: 0 6px 0 var(--signal);
+}
+.head-bar { display: grid; grid-template-columns: 1fr auto auto; min-height: 76px; }
+.brand {
+  display: flex; flex-direction: column; justify-content: center; gap: 2px;
+  padding: 10px 24px; border: 0; text-decoration: none; transform: rotate(-.3deg);
+}
+.brand-main { font: 1.65rem/1 var(--display); }
+.brand-sub { font: 700 .8rem/1 var(--mono); letter-spacing: .12em; }
+.menu-toggle, .head-cta {
+  min-width: 145px; border: 0; border-left: 3px solid var(--ink); background: var(--paper);
+  padding: 12px 20px; color: var(--ink); text-decoration: none; text-transform: uppercase;
+  font: 1.15rem/1 var(--display); display: flex; align-items: center; justify-content: center; gap: 18px;
+}
+.menu-toggle { display: none; }
+.menu-toggle b { font-size: 2rem; transition: transform .2s ease; }
+.menu-toggle[aria-expanded="true"] b { transform: rotate(45deg); }
+.head-cta { background: var(--signal); }
+.head-cta:hover { background: var(--ink); color: var(--acid); }
+
+.nav { display: grid; grid-template-columns: repeat(7, minmax(0,1fr)); overflow: visible; border-top: 3px solid var(--ink); }
+.nav a {
+  min-width: 0; min-height: 70px; display: flex; flex-direction: column; justify-content: space-between;
+  padding: 10px 12px; border-right: 3px solid var(--ink); font-size: 1rem; text-transform: none;
+  background: var(--paper); transform: rotate(var(--tilt, 0deg));
+}
+.nav a:nth-child(odd) { --tilt: -.25deg; }
+.nav a:nth-child(even) { --tilt: .25deg; }
+.nav a small { font: .72rem/1 var(--display); color: var(--signal); }
+.nav a span { font: .9rem/1 var(--display); }
+.nav a:hover, .nav a[aria-current=page] { background: var(--ink); color: var(--acid); }
+.nav a[aria-current=page] small { color: var(--signal); }
+
+.ticker { border-bottom: 4px solid var(--ink); background: var(--ink); color: var(--acid); transform: rotate(-.15deg); }
+.ticker span { font: 1rem/1 var(--display); padding: 11px 0; }
+
+.home-stage { min-height: calc(100vh - 180px); background: var(--acid); isolation: isolate; border-bottom: 5px solid var(--ink); }
+.home-stage::before {
+  content: ''; position: absolute; inset: 0; z-index: -2;
+  background: repeating-linear-gradient(168deg, transparent 0 34px, rgba(16,17,13,.08) 34px 38px);
+}
+.home-stage::after {
+  content: ''; position: absolute; z-index: -1; inset: 2% 5% -5% 33%;
+  background: url('radio-girl-silhouette.png') right bottom / contain no-repeat;
+  filter: drop-shadow(12px 10px 0 var(--signal)); opacity: .9; transform: rotate(1deg);
+}
+.hero-copy { padding: clamp(30px,5vw,76px); text-shadow: 3px 3px 0 var(--paper); }
+.hero-copy h1 { font-family: var(--display); font-size: clamp(4.5rem,11vw,11rem); line-height: .83; max-width: 8ch; }
+.hero-copy h1 i { color: var(--signal); transform: translateX(4vw) rotate(-3deg); text-shadow: 4px 4px 0 var(--ink); }
+.hero-meta { grid-template-columns: 1fr; max-width: 320px; background: rgba(255,247,214,.9); padding: 14px 18px; border: var(--line); border-radius: 31px 8px 28px 5px / 9px 25px 7px 23px; box-shadow: 7px 7px 0 var(--ink); }
+.hero-meta div { border-top: 3px dashed var(--ink); }
+.hero-meta div:first-child { border-top: 0; }
+.signal-board { background: transparent; min-height: 620px; }
+.signal { border: 4px solid var(--ink); box-shadow: 7px 7px 0 var(--ink); }
+.signal-a { background: var(--signal); border-radius: 46% 54% 50% 48% / 53% 45% 55% 47%; }
+.signal-b { background: var(--paper); transform: rotate(-11deg); border-radius: 48% 7px 50% 10px; }
+.signal-c { background: var(--acid); clip-path: polygon(47% 0,100% 94%,3% 100%); }
+.signal span { font: 1rem/1 var(--display); }
+.glitch-hint { color: var(--ink); background: var(--signal); padding: 7px 10px; border: 2px solid; font-weight: 700; transform: rotate(-2deg); }
+
+.page-intro { position: relative; min-height: 52vh; background: var(--signal); border-bottom: 5px solid var(--ink); overflow: hidden; }
+.page-intro::after { content: ''; position: absolute; width: 210px; height: 250px; right: 26%; bottom: -42px; background: url('radio-girl-chibi.png') center/contain no-repeat; filter: drop-shadow(6px 6px 0 var(--ink)); transform: rotate(7deg); pointer-events: none; }
+.page-intro h1 { font-family: var(--display); font-size: clamp(3.5rem,9vw,9rem); text-shadow: 5px 5px 0 var(--acid); transform: rotate(-1deg); }
+.page-intro aside { position: relative; z-index: 2; background: var(--ink); color: var(--paper); border-left: 5px solid var(--acid); }
+.stamp { border: 3px dashed currentColor; border-radius: 47% 53% 42% 58%; background: var(--signal); color: var(--ink); font-weight: 700; }
+.eyebrow { font-family: var(--display); font-size: .86rem; }
+
+.content-grid, .showcase, .about-layout { border-bottom: 5px solid var(--ink); }
+.block, .log-entry, .feedback-card, .project-copy, .about-copy { border-color: var(--ink); }
+.block h2, .proposal h2, .project-copy h2, .about-copy h2 { font-family: var(--display); text-shadow: 3px 3px 0 var(--acid); }
+.block:nth-child(1), .proposal { background: var(--paper); }
+.block.black, .page-intro aside.black { background: var(--ink); color: var(--paper); }
+.black h2 { color: var(--signal); text-shadow: 3px 3px 0 var(--acid); }
+.acid { background: var(--acid) !important; color: var(--ink) !important; }
+.orange { background: var(--signal) !important; color: var(--ink) !important; }
+.violet { background: var(--acid) !important; color: var(--ink) !important; }
+.number { font-family: var(--display); color: var(--signal); opacity: 1; }
+.list { border-top: 4px solid var(--ink); }
+.list li { border-bottom: 3px dashed var(--ink); }
+.log-entry:nth-child(odd) { background: var(--acid); transform: rotate(-.15deg); }
+.log-entry:nth-child(even) { background: var(--signal); transform: rotate(.15deg); }
+.tag { border: 3px solid; border-radius: 44% 56% 48% 52%; background: var(--paper); }
+.feedback-card:nth-child(odd) { background: var(--acid); }
+.feedback-card:nth-child(even) { background: var(--signal); }
+.feedback-card b { color: var(--ink); font-family: var(--display); }
+
+.ref-toolbar { background: var(--ink); color: var(--paper); border-bottom: 4px solid var(--signal); }
+.upload-btn, .primary { background: var(--signal); border: 3px solid var(--paper); color: var(--ink); box-shadow: 7px 7px 0 var(--acid); border-radius: 44% 8px 48% 6px / 9px 46% 7px 42%; font-family: var(--display); }
+.format-strip { background: var(--acid); border-bottom: 5px solid var(--ink); }
+.format-channel { background: var(--acid); border-right: 3px dashed var(--ink); }
+.format-channel:nth-child(even) { background: var(--signal); }
+.format-channel:hover, .format-channel:focus-visible { background: var(--ink); color: var(--paper); transform: translateY(-4px) rotate(-1deg); }
+.format-channel b { color: var(--ink); font-family: var(--display); }
+.reference-grid { background: var(--ink); gap: 4px; }
+.ref-card { background: var(--paper); border: 0; transform: rotate(-.3deg); }
+.ref-card:nth-child(4n+2) { background: var(--acid); transform: rotate(.4deg); }
+.ref-card:nth-child(4n+3) { background: var(--signal); transform: rotate(-.2deg); }
+.ref-card h3 { font-family: var(--display); }
+.ref-preview { border: 4px solid var(--ink); border-radius: 9px 38px 7px 31px / 33px 8px 29px 6px; box-shadow: 6px 6px 0 rgba(16,17,13,.7); }
+.delete-ref { border: 3px solid var(--ink); background: var(--paper); border-radius: 45% 52% 43% 57%; font-family: var(--display); }
+.dialog { border: 5px solid var(--ink); border-radius: 21px 6px 31px 9px; box-shadow: 13px 13px 0 var(--acid); }
+.dialog-head { background: var(--signal); border-bottom: 4px dashed var(--ink); font-family: var(--display); }
+.field input, .field textarea, .field select { border: 3px solid var(--ink); border-radius: 8px 17px 6px 12px; background: var(--paper); }
+
+.project-void { background: var(--ink); }
+.orbit { border: 5px dashed var(--acid); }
+.orbit::before { background: var(--signal); }
+.project-copy { background: var(--signal); }
+.portrait-symbol { background: var(--acid) url('radio-girl-chibi.png') center 65% / 72% auto no-repeat; border-right: 5px solid var(--ink); }
+.portrait-symbol div { display: none; }
+
+footer { position: relative; min-height: 180px; align-items: center; background: var(--ink); color: var(--paper); border-top: 6px solid var(--signal); overflow: visible; }
+.mascot-button { position: relative; align-self: stretch; width: 180px; border: 0; background: var(--acid); color: var(--ink); font-family: var(--display); transform: rotate(-2deg); }
+.mascot-button img { position: absolute; width: 150px; height: 170px; object-fit: contain; bottom: 38px; left: 16px; filter: drop-shadow(5px 5px 0 var(--signal)); }
+.mascot-button b { position: absolute; bottom: 12px; left: 17px; right: 10px; }
+
+@media (max-width: 900px) {
+  body.menu-open { overflow: hidden; }
+  .head-bar { grid-template-columns: 1fr auto; }
+  .brand { padding-left: 16px; }
+  .brand-main { font-size: 1.25rem; }
+  .brand-sub { font-size: .67rem; }
+  .menu-toggle { display: flex; min-width: 118px; background: var(--signal); }
+  .head-cta { display: none; }
+  .nav { position: fixed; z-index: 60; inset: 76px 0 0; display: none; grid-template-columns: 1fr; align-content: start; overflow-y: auto; background: var(--acid); border-top: 4px solid var(--ink); }
+  .nav.is-open { display: grid; }
+  .nav a { min-height: 11vh; padding: 12px 22px; border-right: 0; border-bottom: 4px solid var(--ink); flex-direction: row; align-items: center; }
+  .nav a span { font-size: clamp(1.3rem,6vw,2.4rem); }
+  .nav a small { font-size: 1rem; }
+  .home-stage { display: block; min-height: 1000px; }
+  .home-stage::after { inset: 30% -25% 2% 5%; opacity: .76; }
+  .hero-copy { min-height: 720px; }
+  .hero-copy h1 { font-size: clamp(4rem,20vw,7rem); }
+  .hero-meta { margin-top: 260px; }
+  .signal-board { min-height: 400px; margin-top: -400px; }
+  .page-intro::after { width: 140px; height: 175px; right: 3%; bottom: 18%; opacity: .8; }
+  .page-intro aside { border-left: 0; border-top: 5px solid var(--acid); }
+  .format-strip { grid-template-columns: repeat(2,1fr); }
+  .portrait-symbol { min-height: 520px; border-right: 0; border-bottom: 5px solid var(--ink); }
+  footer { min-height: 220px; padding-top: 70px; }
+  .mascot-button { position: absolute; width: 150px; height: 150px; top: -82px; left: calc(50% - 75px); }
+  .mascot-button img { width: 125px; height: 145px; left: 12px; bottom: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-stage::after, .page-intro::after { transform: none; }
+}
