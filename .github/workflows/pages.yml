@@ -32,6 +32,8 @@ jobs:
         run: npm ci
       - name: Check source
         run: npm run check
+      - name: Test presentation transfer
+        run: npm test
       - name: Build website
         run: npm run build
       - name: Configure Pages

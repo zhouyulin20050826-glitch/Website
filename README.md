@@ -10,7 +10,13 @@ GitHub Pages 地址：**https://zhouyulin20050826-glitch.github.io/Website/**（
 
 推送到 `main` 后，`.github/workflows/pages.yml` 会检查、构建并发布 `dist/`。可在 [部署记录](https://github.com/zhouyulin20050826-glitch/Website/actions/workflows/pages.yml) 查看进度；构建或发布失败时，修复后再次推送即可。源码继续保留在仓库中，可随时编辑。
 
-公开网站只发布代码与静态图片。编辑器中的个人素材和提案仍存放在各访问者的浏览器 IndexedDB 中，不会自动共享。localhost 的数据也不会自动复制到公开网址。
+网站可以发布正式提案和配套媒体供所有人查看。个人编辑仍保存在本机 IndexedDB，需要导出并由维护者发布后才会共享；localhost 的数据不会自动复制到公开网址。
+
+## 上传以前编辑好的 Idea Presentation
+
+新编辑器提供“导入完整提案”和“导出完整备份”，备份包含文字、图片、视频和排版。旧 ChatGPT 站点没有导出按钮时，使用一次性导出脚本取出原浏览器中的数据。完整步骤见 [迁移和发布指南](docs/idea-presentation-transfer.md)。
+
+维护者拿到备份后执行 `npm run publish:idea -- "备份文件路径.json"`，检查并提交生成的 `public/presentation.json` 和 `public/presentation-assets/`，推送到 main 后自动公开发布。访客默认看到正式提案，本机草稿会单独保留。
 
 ## 本地启动
 
