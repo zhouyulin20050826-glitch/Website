@@ -36,6 +36,13 @@ test('invalid backups and unsafe media cannot replace existing content',async()=
   assert.throws(()=>normalizeDeck({version:99,cover:{},sections:[]}),/更新版本/);
 });
 
+test('large video backups validate and decode without overflowing the regular expression stack',()=>{
+  const bytes=Buffer.alloc(8*1024*1024,123);
+  const backup={format:'tape-mind-idea',formatVersion:1,deck:{version:5,cover:{title:'Large video'},sections:[{id:'video-section',media:[{id:'large-video',kind:'video',file:{name:'video.mp4',type:'video/mp4',data:bytes.toString('base64')}}]}]}};
+  const decoded=decodeBackup(backup);
+  assert.equal(decoded.sections[0].media[0].file.size,bytes.length);
+});
+
 test('empty presentation is valid and legacy plain text stays plain text',async()=>{
   const empty=fixture();empty.sections=[];
   assert.equal(decodeBackup(await createBackup(empty)).sections.length,0);
@@ -53,16 +60,21 @@ test('publication writes portable assets and loads without any private browser d
   assert.equal(manifest.deck.locked,true);
   assert.equal(manifest.deck.sections[0].media[0].file,undefined);
   assert.match(manifest.deck.sections[0].media[0].asset,/^presentation-assets\/[a-f0-9]{64}\.png$/);
+  let requested=0;
   const mockFetch=async url=>{
+    requested++;
+    url=new URL(url);
     assert.equal(url.origin,'https://example.com');
     assert.ok(url.pathname.startsWith('/Website/'));
     const file=url.pathname.slice('/Website/'.length);
     return new Response(await fs.readFile(path.join(dir,file)),{headers:{'Content-Type':file.endsWith('.json')?'application/json':file.endsWith('.png')?'image/png':'video/mp4'}});
   };
   const published=await loadPublishedDeck(new URL('https://example.com/Website/'),mockFetch);
+  assert.equal(requested,1,'Initial page load reads only the manifest, without downloading videos');
   assert.equal(published.deck.cover.title,fixture().cover.title);
   assert.equal(published.revision,result.revision);
-  const exportedAgain=decodeBackup(await createBackup(published.deck));
+  assert.equal(published.deck.sections[0].media[0].file,undefined);
+  const exportedAgain=decodeBackup(await createBackup(published.deck,mockFetch));
   assert.deepEqual(await exportedAgain.sections[0].media[0].file.arrayBuffer(),await fixture().sections[0].media[0].file.arrayBuffer());
   // Publishing the same backup is deterministic, so repeated deploys do not add duplicate media.
   assert.equal((await preparePublication(encoded,dir)).revision,result.revision);

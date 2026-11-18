@@ -1,6 +1,488 @@
 {
   "format": "tape-mind-idea",
   "formatVersion": 1,
-  "revision": null,
-  "deck": null
+  "revision": "f23987792b419523437292b98be2103899aa716c9fa85b7958cbf7fa2ce3b499",
+  "deck": {
+    "version": 5,
+    "locked": true,
+    "cover": {
+      "title": "Don't kill yourself",
+      "subtitle": "Pathway C&nbsp; &nbsp; &nbsp;A Small Game in UE",
+      "titleColor": "#10110d",
+      "subtitleColor": "#10110d",
+      "titleBold": true,
+      "subtitleBold": false,
+      "titleSize": 126,
+      "subtitleSize": 36
+    },
+    "sections": [
+      {
+        "id": "95e6d9fd-5431-40fa-9e1f-99b4cfb6db7e",
+        "title": "Inspiration",
+        "body": "My inspiration comes from several scenes in Stephen Chow’s films.<br><br>The first reference is the depiction of the <span style=\"background-color: rgb(0, 0, 0);\">mermaid</span>’s appearance in <em>The Mermaid</em>. <br>To make the character easier to design and animate in Unreal Engine, I decided to combine several visual elements from different interpretations of mermaids and create a standing mermaid character with a fish head and a humanoid body. <br><br>The second reference is the “<span style=\"background-color: rgb(0, 0, 0);\">Strange Gun</span>” from <em>From Beijing with Love</em>. This weapon has two firing ports at the front and back, and bullets are randomly fired from either side.",
+        "titleColor": "#10110d",
+        "bodyColor": "#ff4a00",
+        "titleBold": true,
+        "bodyBold": false,
+        "titleSize": 80,
+        "bodySize": 28,
+        "layout": 0,
+        "bg": "#cfff00",
+        "stageWidth": 104,
+        "stageHeight": 710,
+        "media": [
+          {
+            "id": "dae303d4-072d-4971-9c5f-d140d6fbd7fb",
+            "x": 46.431572725594016,
+            "y": 50.89445189303909,
+            "w": 53.31417146367521,
+            "z": 4,
+            "rotate": 11,
+            "kind": "video",
+            "name": "MischievousGun.mp4",
+            "asset": "presentation-assets/7ba98971c2bca68513cd5b7f5bdb157476773023833e7681c09e27c6516e8aa1.mp4"
+          },
+          {
+            "id": "8c5abd1d-2977-487e-8d78-ffa8f54f4b90",
+            "x": 31.202367290352022,
+            "y": 0,
+            "w": 38,
+            "z": 3,
+            "rotate": 0,
+            "kind": "image",
+            "name": "Mermaid1.jpg",
+            "asset": "presentation-assets/c5252cd6d7f7043c389f1d4088d9686b7c071c6e19fe64bf2da640b452a48edf.jpg"
+          },
+          {
+            "id": "402f259d-8f1a-455d-a478-6b09b97105b4",
+            "x": 61.698069382625896,
+            "y": 13.404603928513279,
+            "w": 38,
+            "z": 4,
+            "rotate": 0,
+            "kind": "image",
+            "name": "Mermaid2.jpg",
+            "asset": "presentation-assets/3893677099c1088fb379f829a5fe83adb0bf0d3948c79849c4702909be55ec5e.jpg"
+          },
+          {
+            "id": "c5ecae6c-f2f0-4c43-9b2f-a367d19c90cc",
+            "x": 0,
+            "y": 6.892549043797513,
+            "w": 38,
+            "z": 5,
+            "rotate": 0,
+            "kind": "image",
+            "name": "Mermaid3.jpg",
+            "asset": "presentation-assets/845422bd39266635d507b5a7732eb8629ff22ac11c978767fa38b801e5ac48ad.jpg"
+          },
+          {
+            "id": "be2d1b1d-4534-41dc-9a4f-0b569185ba01",
+            "x": 0,
+            "y": 42.36697980373516,
+            "w": 47.59519767771168,
+            "z": 6,
+            "rotate": 0,
+            "kind": "image",
+            "name": "FirstPerson.jpg",
+            "asset": "presentation-assets/0823e1e2a859d9a9de1cb9de632178a0dae26e1512dfb611000210a694d33a86.jpg"
+          }
+        ],
+        "textBoxes": [
+          {
+            "id": "f1b32cd8-19cb-4ed3-8a59-c2d447662be5",
+            "x": 13.074587602038703,
+            "y": 86,
+            "w": 42,
+            "z": 25,
+            "rotate": 0,
+            "html": "Draft of Character",
+            "size": 28
+          }
+        ]
+      },
+      {
+        "id": "1640e3d6-3870-412a-8a46-9a3b370dbaf3",
+        "title": "Art Style",
+        "body": "The fish-headed humanoid character reminds me of <em style=\"background-color: rgb(207, 255, 0);\">Splatoon</em>. I think this visual style is very suitable for this game, so I may draw some inspirations from <em>Splatoon in the aspect of art design</em>. I can not reach the same level of complexity and polish but I hope to capture this sense of <span style=\"background-color: rgb(208, 255, 0);\">energy, colorful, and visual impact</span>.",
+        "titleColor": "#ff4a00",
+        "bodyColor": "#000000",
+        "titleBold": true,
+        "bodyBold": false,
+        "titleSize": 80,
+        "bodySize": 28,
+        "layout": 1,
+        "bg": "#fff7d6",
+        "stageWidth": 100,
+        "stageHeight": 500,
+        "media": [
+          {
+            "id": "90fcbafe-967e-4645-9b20-1ba0af73b472",
+            "x": 45.274904112705364,
+            "y": 1.925972169035638,
+            "w": 38,
+            "z": 2,
+            "rotate": 0,
+            "kind": "image",
+            "name": "SplatoonArt.jpg",
+            "asset": "presentation-assets/79031966e1fb6bf793a7af8a9dc3f6a335211811622bc989979fd5220433859e.jpg"
+          },
+          {
+            "id": "13a6d4dd-c367-4cfb-a307-c1d33a27eea9",
+            "x": 0,
+            "y": 6.933331298828126,
+            "w": 38,
+            "z": 3,
+            "rotate": 0,
+            "kind": "image",
+            "name": "SplatoonScene1.jpg",
+            "asset": "presentation-assets/51aa5b4d0703b4fc8cbd0b7562cf2ef3324d31e6d70d9007d4a9594c3c550dd9.jpg"
+          },
+          {
+            "id": "f1abc80d-7699-404a-be45-830f2e41cb27",
+            "x": 16.81949453120572,
+            "y": 43.333361816406246,
+            "w": 38,
+            "z": 4,
+            "rotate": 0,
+            "kind": "image",
+            "name": "SplatoonScene2.jpg",
+            "asset": "presentation-assets/fe3dac53ce794755bd93598acdc6a6feb29e42a8953171c3d3be51b72273c8e8.jpg"
+          },
+          {
+            "id": "f9a94b5c-da0f-45f4-8a13-ad556dc32c75",
+            "x": 63.90098409806815,
+            "y": 50.066693360178604,
+            "w": 38,
+            "z": 5,
+            "rotate": 0,
+            "kind": "image",
+            "name": "Character.jpg",
+            "asset": "presentation-assets/ebbb4963455270306b22d622b79bff523f72e9c39e2a9115e5a7fdf56f3f1977.jpg"
+          }
+        ],
+        "textBoxes": []
+      },
+      {
+        "id": "3594a380-1836-4002-a28a-82c8df97642a",
+        "title": "Core Game Mechanics",
+        "body": "The player controls a fish-headed humanoid character who uses the “Strange Gun” to <span style=\"background-color: rgb(16, 17, 13);\">attack approaching enemies</span> in <span style=\"background-color: rgb(0, 0, 0);\">first person mode</span>.<br><br>When bullets hit enemies, they can either reduce the enemies’ health or kill them instantly. (The final effect will be adjusted according to the number of enemies and their movement speed during further development). <br>If the bullets hit the player themselves, their entire health bar will be emptied in one shot. <br>The player needs to <span style=\"background-color: rgb(0, 0, 0);\">press the space key</span> to <span style=\"background-color: rgb(0, 0, 0);\">switch</span> the front and back <span style=\"background-color: rgb(0, 0, 0);\">directions</span> of the gun in order to avoid being hit by their own bullets.",
+        "titleColor": "#cfff00",
+        "bodyColor": "#ffffff",
+        "titleBold": true,
+        "bodyBold": false,
+        "titleSize": 80,
+        "bodySize": 28,
+        "layout": 0,
+        "bg": "#ff4a00",
+        "stageWidth": 100,
+        "stageHeight": 500,
+        "media": [
+          {
+            "id": "18d6dcb0-fe4b-4c3c-bfd4-057e77ae33ee",
+            "x": 51.780770113751416,
+            "y": 0,
+            "w": 38,
+            "z": 2,
+            "rotate": 0,
+            "kind": "image",
+            "name": "Gun1.jpg",
+            "asset": "presentation-assets/9a6957fd9c9d4dd42b2b45bb101d4b0d5acb627fe3d269515b1f0d7b7b59446b.jpg"
+          },
+          {
+            "id": "51299625-82c4-433b-87e3-f5f3d9d7bf2f",
+            "x": 51.90619495600097,
+            "y": 62.07551053118779,
+            "w": 38,
+            "z": 3,
+            "rotate": 0,
+            "kind": "image",
+            "name": "Gun2.jpg",
+            "asset": "presentation-assets/0dd4ebd132f9140beb4ee1e36e98b9ceef0ba5191d00adbbd6d7cd184472e9dd.jpg"
+          },
+          {
+            "id": "594208ef-c30d-44bd-b34a-1f277f13f7ad",
+            "x": 0,
+            "y": 22.888358386198117,
+            "w": 42.61591143104515,
+            "z": 4,
+            "rotate": 0,
+            "kind": "image",
+            "name": "Shot.jpg",
+            "asset": "presentation-assets/3c194f029b1a7ee8cafc1e0e564e767082d7452ce31af1defac053c95b362e65.jpg"
+          }
+        ],
+        "textBoxes": []
+      },
+      {
+        "id": "653873e5-e8b2-4ea0-aec7-5a69e0c49ee6",
+        "title": "<span style=\"color: rgb(247, 247, 247);\">Core Game Mechanics</span>",
+        "body": "Random <span style=\"background-color: rgb(255, 74, 0);\">signposts</span> will rise  in the environment. These signposts contain light indicators that provide <span style=\"background-color: rgb(255, 72, 0);\">hints about the firing direction</span> of the next several bullets. <br>When bullets are fired in direction A, the corresponding lights will turn on; when bullets are fired in direction B, the lights will remain off.<br>The <span style=\"background-color: rgb(255, 72, 0);\">number of lights</span> on the signpost will gradually <span style=\"background-color: rgb(255, 72, 0);\">increase</span>, starting from four lights and eventually reaching ten lights. (This will be adjusted based on the actual difficulty of implementation and the overall game balance).<br><br><br>Accordingly, the player’s ability to predict bullet directions will progress from remembering the next four shots to <span style=\"background-color: rgb(255, 74, 0);\">remembering</span> the next ten shots. ",
+        "titleColor": "#ffffff",
+        "bodyColor": "#cfff00",
+        "titleBold": true,
+        "bodyBold": false,
+        "titleSize": 80,
+        "bodySize": 28,
+        "layout": 1,
+        "bg": "#000000",
+        "stageWidth": 104,
+        "stageHeight": 500,
+        "media": [
+          {
+            "id": "01f6222d-72b9-40c6-81c3-f204537379b0",
+            "x": 6,
+            "y": 8,
+            "w": 28.219504238492362,
+            "z": 2,
+            "rotate": 0,
+            "kind": "image",
+            "name": "Sign.jpg",
+            "asset": "presentation-assets/2083db9998e479f985082d3205c48cf5fc87432c228040ad9a6664757b3f5364.jpg"
+          },
+          {
+            "id": "f8cffe95-9020-4f49-9008-ab8a514eecd9",
+            "x": 41.301374415438694,
+            "y": 7.977758789062498,
+            "w": 28.293598614279745,
+            "z": 3,
+            "rotate": 0,
+            "kind": "image",
+            "name": "LightOnSign.jpg",
+            "asset": "presentation-assets/6fef51adb07874432f86def973d8baa2d161656201774f3d9901895752d04490.jpg"
+          },
+          {
+            "id": "5bc48ef5-4291-42ef-8e37-4d2ed574d63a",
+            "x": 54.5254896596852,
+            "y": 66.86668090820312,
+            "w": 38,
+            "z": 5,
+            "rotate": 0,
+            "kind": "image",
+            "name": "Sign.jpg",
+            "asset": "presentation-assets/2083db9998e479f985082d3205c48cf5fc87432c228040ad9a6664757b3f5364.jpg"
+          },
+          {
+            "id": "c80a1361-95d4-4b23-8058-cc66dcc9c0cd",
+            "x": 62.50490892468788,
+            "y": 75.0444580078125,
+            "w": 21.3286859348785,
+            "z": 5,
+            "rotate": -3,
+            "kind": "image",
+            "name": "LightOnSign.jpg",
+            "asset": "presentation-assets/6fef51adb07874432f86def973d8baa2d161656201774f3d9901895752d04490.jpg"
+          }
+        ],
+        "textBoxes": [
+          {
+            "id": "d3619832-b57f-419b-a244-8cd334a6de79",
+            "x": 35.21811737900033,
+            "y": 16.088885498046874,
+            "w": 42,
+            "z": 22,
+            "rotate": 0,
+            "html": "<span style=\"color: rgb(207, 255, 0);\">+</span>",
+            "size": 80
+          },
+          {
+            "id": "07772572-8676-4806-8755-569305a663f6",
+            "x": 43.85931649781443,
+            "y": 74.33336791992188,
+            "w": 42,
+            "z": 23,
+            "rotate": 0,
+            "html": "<span style=\"color: rgb(207, 255, 0);\">=</span>",
+            "size": 80
+          }
+        ]
+      },
+      {
+        "id": "9ae7e984-951f-47bb-898b-98b6ce7e40d0",
+        "title": "questions",
+        "body": "                   1. Lack of storyline and meaning.<br>                      Create a world filled with elements in <span>Stephen</span><br><span>                      Chow’s </span><span>films or Create a story for the character.</span><br><span style=\"color: rgb(255, 74, 0);\"><br></span><br>                   2. If the worklord achieveing the game mechanics <br>                       with the MCP in Unreal Engine with Codex is <br>                       suitable.",
+        "titleColor": "#10110d",
+        "bodyColor": "#ffffff",
+        "titleBold": true,
+        "bodyBold": false,
+        "titleSize": 80,
+        "bodySize": 28,
+        "layout": 1,
+        "bg": "#ff4a00",
+        "stageWidth": 100,
+        "stageHeight": 500,
+        "media": [
+          {
+            "id": "80d1ff85-e7c1-4d94-9af6-4367ef50b193",
+            "x": 0,
+            "y": 0,
+            "w": 38,
+            "z": 2,
+            "rotate": 0,
+            "kind": "image",
+            "name": "1.jpg",
+            "asset": "presentation-assets/1612ed1dba1dd073161c6c3413f9e713d01b3edeb3522a5bc398d711ad941d44.jpg"
+          },
+          {
+            "id": "46cf1375-1096-44c4-91e5-646342efd87c",
+            "x": 40.4801391884184,
+            "y": 0,
+            "w": 38,
+            "z": 3,
+            "rotate": 0,
+            "kind": "image",
+            "name": "2.jpg",
+            "asset": "presentation-assets/fdd22615fc7eb322fc8c829763a7ab385415b77e09f430854699d83d381fe1e5.jpg"
+          },
+          {
+            "id": "fbe2c0b0-f3d7-4bce-a3e7-b8f95b374c08",
+            "x": 76.1710190897734,
+            "y": 34.147877191014295,
+            "w": 38,
+            "z": 4,
+            "rotate": 0,
+            "kind": "image",
+            "name": "3.jpg",
+            "asset": "presentation-assets/0ca8e17f2d9b85790e74548eeef2137d2511256fabdc78b5cb3731c112ae3a2b.jpg"
+          },
+          {
+            "id": "1b294492-8924-482d-9930-b52dcf1e36dc",
+            "x": 1.7355292230084887,
+            "y": 57.741748802554156,
+            "w": 38,
+            "z": 5,
+            "rotate": 0,
+            "kind": "image",
+            "name": "4.jpg",
+            "asset": "presentation-assets/41a224d81d87348d82040712d4832bafc614c02d9d2f2497b2b89625d9c16b90.jpg"
+          },
+          {
+            "id": "7f64e138-4135-4d24-890a-b43eb969e07c",
+            "x": 42.345061976107424,
+            "y": 57.63024220163282,
+            "w": 38,
+            "z": 6,
+            "rotate": 0,
+            "kind": "image",
+            "name": "6.jpg",
+            "asset": "presentation-assets/ef606e5e7d68ccfac852cf58b281b07d8ed89d24a8bf4d5332afe75c6454d1a5.jpg"
+          }
+        ],
+        "textBoxes": []
+      },
+      {
+        "id": "ada49360-2ce3-41b2-b0d2-b55cbb4ebb1f",
+        "title": "AI Workflow",
+        "body": "<b><span style=\"color: rgb(255, 74, 0);\">Deekseek</span><span style=\"color: rgb(255, 74, 0);\">,  </span><span style=\"color: rgb(255, 74, 0);\">ChatGPT,  HunYuan AI,  Mixamo,  </span><span style=\"color: rgb(255, 74, 0);\">Codex</span></b>",
+        "titleColor": "#10110d",
+        "bodyColor": "#10110d",
+        "titleBold": true,
+        "bodyBold": false,
+        "titleSize": 64,
+        "bodySize": 26,
+        "layout": 2,
+        "bg": "#fff7d6",
+        "stageWidth": 100,
+        "stageHeight": 570,
+        "media": [
+          {
+            "id": "382e7711-7315-428b-bd80-073a63f11129",
+            "x": 4.706825527680414,
+            "y": 1.299571856483955,
+            "w": 20,
+            "z": 2,
+            "rotate": 0,
+            "kind": "image",
+            "name": "a.jpg",
+            "asset": "presentation-assets/2c61325a849a15be7ef7c1c16e4d9abe6695eba9d863af69092a0c34ab87cd36.jpg"
+          },
+          {
+            "id": "8ec19334-1d01-4668-9a08-596a6655c612",
+            "x": 28.947722705141704,
+            "y": 1.1696125292077872,
+            "w": 20,
+            "z": 3,
+            "rotate": 0,
+            "kind": "image",
+            "name": "b.jpg",
+            "asset": "presentation-assets/cab52c76cb1509170393eea2f542fe686134769bd57046deac7d66965ca54673.jpg"
+          },
+          {
+            "id": "11f47670-4792-48a4-b56c-d99fa2aca9f4",
+            "x": 50.65453941849259,
+            "y": 1.1696125292077872,
+            "w": 20,
+            "z": 4,
+            "rotate": 0,
+            "kind": "image",
+            "name": "c.jpg",
+            "asset": "presentation-assets/420f79f82acd1ae81fd2bdad576ee2b16132da09a04ec810fd069acc3c3af100.jpg"
+          },
+          {
+            "id": "53ff13eb-6c70-4521-b03f-5f216f3d7f3f",
+            "x": 40.278996940581486,
+            "y": 48.47822611253591,
+            "w": 20,
+            "z": 5,
+            "rotate": 0,
+            "kind": "image",
+            "name": "d.jpg",
+            "asset": "presentation-assets/32a7f7940a4dca347b4710314b7897bd3b327486d056686343c2bf3b3c238c74.jpg"
+          },
+          {
+            "id": "e498ec7e-eb8f-40b1-9f11-290357d36d61",
+            "x": 75.37888240365777,
+            "y": 1.0987258446463963,
+            "w": 20,
+            "z": 6,
+            "rotate": 0,
+            "kind": "image",
+            "name": "f.jpg",
+            "asset": "presentation-assets/263d25261aa1c39e6888e9b7244f21cf01d199dc6bb7b84210f8cae71d4db878.jpg"
+          }
+        ],
+        "textBoxes": [
+          {
+            "id": "7b50364e-10ae-42e3-83b4-050f6e7b77bf",
+            "x": 43.14587701274333,
+            "y": 38.387150824958795,
+            "w": 42,
+            "z": 23,
+            "rotate": 0,
+            "html": "Character Design",
+            "size": 28
+          },
+          {
+            "id": "d1863255-2010-4ba7-9515-8fa53b7aeb8d",
+            "x": 41.732229483114324,
+            "y": 86,
+            "w": 42,
+            "z": 24,
+            "rotate": 0,
+            "html": "Character Animation",
+            "size": 28
+          },
+          {
+            "id": "b23a8868-2aae-4dc8-8717-4d20e2cae4c6",
+            "x": 8.183794707072686,
+            "y": 37.92736953652989,
+            "w": 42,
+            "z": 27,
+            "rotate": 0,
+            "html": "Storyline Creation",
+            "size": 28
+          },
+          {
+            "id": "eb5b2453-bd94-41ae-a85d-fa8f786fcc41",
+            "x": 74.4628599763367,
+            "y": 38.32068407824019,
+            "w": 42,
+            "z": 28,
+            "rotate": 0,
+            "html": "Game Mechanics Creation with MCP",
+            "size": 28
+          }
+        ]
+      }
+    ]
+  }
 }

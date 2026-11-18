@@ -32,7 +32,7 @@ export function normalizeDeck(input) {
         stageWidth:number(s.stageWidth,100,50,150), stageHeight:number(s.stageHeight,500,280,1600),
         media:(s.media || []).map(m => {
           if(!m || !['image','video'].includes(m.kind)) throw Error('备份中的媒体类型不正确。');
-          return unique({...position(m), kind:m.kind, name:text(m.name,'media'), file:m.file, asset:m.asset});
+          return unique({...position(m), kind:m.kind, name:text(m.name,'media'), file:m.file, asset:m.asset, assetURL:m.assetURL, mime:m.mime});
         }),
         textBoxes:(s.textBoxes || []).map(b => unique({...position(b),html:rich(b.html),size:number(b.size,28,14,120)})),
       };
@@ -40,15 +40,22 @@ export function normalizeDeck(input) {
   };
 }
 
-export async function createBackup(state) {
+export async function createBackup(state, fetcher = fetch) {
   const deck = normalizeDeck(state);
   for(const section of deck.sections) for(const media of section.media) {
+    if(!(media.file instanceof Blob) && media.assetURL) {
+      const response=await fetcher(media.assetURL);
+      if(!response.ok) throw Error('媒体文件下载失败，请稍后再导出。');
+      media.file=new Blob([await response.arrayBuffer()],{type:media.mime});
+    }
     if(!(media.file instanceof Blob)) throw Error('媒体文件尚未加载，请稍后再导出。');
     const bytes = new Uint8Array(await media.file.arrayBuffer());
     let binary = '';
     for(let i=0;i<bytes.length;i+=32768) binary += String.fromCharCode(...bytes.subarray(i,i+32768));
     media.file={name:media.file.name || media.name,type:media.file.type,lastModified:media.file.lastModified || 0,data:btoa(binary)};
     delete media.asset;
+    delete media.assetURL;
+    delete media.mime;
   }
   return {format:BACKUP_FORMAT,formatVersion:1,exportedAt:new Date().toISOString(),deck};
 }
@@ -58,11 +65,17 @@ export function decodeBackup(input) {
   const deck=normalizeDeck(input.deck);
   for(const section of deck.sections) for(const media of section.media) {
     const file=media.file;
-    if(!file || !mediaTypes[file.type] || !file.type.startsWith(media.kind+'/') || typeof file.data!=='string' || !/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(file.data)) throw Error('备份包含缺失、损坏或不支持的媒体文件。');
-    const bytes=Uint8Array.from(atob(file.data),c=>c.charCodeAt(0));
+    // Scan without repeated capture groups: large video backups can overflow RegExp's stack.
+    const data=file?.data;
+    const padding=typeof data==='string'?(data.endsWith('==')?2:data.endsWith('=')?1:0):0;
+    if(!file || !mediaTypes[file.type] || !file.type.startsWith(media.kind+'/') || typeof data!=='string' || data.length%4!==0 || /[^A-Za-z0-9+/=]/.test(data) || data.indexOf('=')!==-1&&data.indexOf('=')!==data.length-padding) throw Error('备份包含缺失、损坏或不支持的媒体文件。');
+    const binary=atob(data),bytes=new Uint8Array(binary.length);
+    for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);
     if(!bytes.length) throw Error('备份中存在空媒体文件。');
     media.file=new File([bytes],text(file.name,media.name),{type:file.type,lastModified:number(file.lastModified,0,0,Number.MAX_SAFE_INTEGER)});
     delete media.asset;
+    delete media.assetURL;
+    delete media.mime;
   }
   return deck;
 }
@@ -77,9 +90,11 @@ export async function loadPublishedDeck(base, fetcher = fetch) {
   const deck=normalizeDeck(publication.deck);
   for(const section of deck.sections) for(const media of section.media) {
     if(typeof media.asset!=='string' || !/^presentation-assets\/[a-f0-9]{64}\.[a-z0-9]+$/.test(media.asset)) throw Error('公开提案的媒体地址不正确。');
-    const asset=await fetcher(new URL(media.asset,base));
-    if(!asset.ok) throw Error('公开提案的媒体加载失败，请刷新重试。');
-    media.file=await asset.blob();
+    const extension=media.asset.split('.').pop();
+    media.mime=Object.keys(mediaTypes).find(type=>mediaTypes[type]===extension);
+    if(!media.mime || !media.mime.startsWith(media.kind+'/'))throw Error('公开提案的媒体类型不正确。');
+    media.assetURL=new URL(media.asset,base).href;
+    delete media.file;
   }
   return {deck,revision:publication.revision};
 }
