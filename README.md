@@ -4,6 +4,14 @@ AI 媒体创作过程档案网站。保留参考站点的七个页面、手写�
 
 参考站点：https://ai-workflow-media-archive.zhouyulin20050826.chatgpt.site/
 
+## 公开网站
+
+GitHub Pages 地址：**https://zhouyulin20050826-glitch.github.io/Website/**（首次部署成功后可访问）。访问者不需要 GitHub 或 ChatGPT 登录。
+
+推送到 `main` 后，`.github/workflows/pages.yml` 会检查、构建并发布 `dist/`。可在 [部署记录](https://github.com/zhouyulin20050826-glitch/Website/actions/workflows/pages.yml) 查看进度；构建或发布失败时，修复后再次推送即可。源码继续保留在仓库中，可随时编辑。
+
+公开网站只发布代码与静态图片。编辑器中的个人素材和提案仍存放在各访问者的浏览器 IndexedDB 中，不会自动共享。localhost 的数据也不会自动复制到公开网址。
+
 ## 本地启动
 
 安装 **Node.js 24 LTS（包含 npm）**，安装后重新打开终端。在项目根目录执行：
@@ -96,4 +104,4 @@ git push origin main
 
 推送需要登录具备该仓库写入权限的 GitHub 账号。多人协作或较大修改建议新建 `codex/功能名称` 分支并通过 PR 合并。不要覆盖 `sites` 远程。提交源码、图片、文档、配置和 lockfile；`node_modules/`、`dist/`、本机工具、临时文件、旧打包文件和 `.env` 已忽略。浏览器 IndexedDB 中编辑的素材与提案不属于源码，不会随 Git 提交或同步。
 
-每次 push / pull request，GitHub Actions 会运行 `npm ci`、检查和构建。建议用功能分支和 PR 管理后续变更。本次未配置自动发布；GitHub Pages 等静态托管可使用构建后的 dist/，原 `.html` 链接均保留，Vite 使用相对资源路径支持子目录部署。
+每次 push / pull request，GitHub Actions 会运行 `npm ci`、检查和构建；推送到 main 还会自动部署 GitHub Pages。建议用功能分支和 PR 管理后续变更。原 `.html` 链接均保留，Vite 使用相对资源路径支持 `/Website/` 子目录部署。根目录的 `.openai/hosting.json` 保留原 Sites 身份，GitHub Pages 的部署不会发布或改变原 Sites 站点。
