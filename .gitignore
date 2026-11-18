@@ -3,3 +3,13 @@
 .changed-style-extract/
 site-*.tar.gz
 .sites-runtime/
+node_modules/
+dist/
+.tools/
+.reference/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
